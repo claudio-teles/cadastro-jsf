@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+ 
+ 
+ <application/>
+ <managed-bean>
+ 	<description>Atualizar Cadastro</description>
+ 	<managed-bean-name>atualizarBean</managed-bean-name>
+ 	<managed-bean-class>bean.AtualizarBean</managed-bean-class>
+ 	<managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+ 	<managed-bean-name>cadastroBean</managed-bean-name>
+ 	<managed-bean-class>bean.CadastroBean</managed-bean-class>
+ 	<managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+ 	<managed-bean-name>loginBean</managed-bean-name>
+ 	<managed-bean-class>bean.LoginBean</managed-bean-class>
+ 	<managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+ <managed-bean>
+ 	<managed-bean-name>pessoasBean</managed-bean-name>
+ 	<managed-bean-class>bean.PessoasBean</managed-bean-class>
+ 	<managed-bean-scope>session</managed-bean-scope>
+ </managed-bean>
+</faces-config>

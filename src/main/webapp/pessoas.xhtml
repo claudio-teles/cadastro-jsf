@@ -42,8 +42,16 @@
 							<p:outputLabel value="#{pessoa.telefone[2]}" />
 						</p:column>
 						
+						<p:column headerText="Logado">
+							<p:outputLabel value="#{pessoa.login}" />
+						</p:column>
+						
 						<p:column headerText="Deletar">
-							<b:commandButton value="Deletar #{pessoa.id}" action="#{pessoasBean.deletarPessoa(pessoa.id)}" ajax="true" look="danger" style="width:150px;" />
+							<b:commandButton value="Deletar #{pessoa.id}" action="#{pessoasBean.deletarPessoa(pessoa.id)}" ajax="true" look="danger" style="width:112px;" />
+						</p:column>
+						
+						<p:column headerText="Logout">
+							<b:commandButton value="Logout #{pessoa.id}" action="#{loginBean.irParaLogout(pessoa.id)}" ajax="true" look="primary" style="width:112px;" />
 						</p:column>
 						
 					</p:dataTable>
@@ -52,7 +60,6 @@
 				
 				<b:commandButton value="Voltar Para Cadastro" action="#{pessoasBean.irParaCadastro()}" ajax="true" look="primary" style="width:200px; margin-top:10px;"/>
 				<br />
-				<b:commandButton value="Sair" action="#{pessoasBean.irParaLogout()}" ajax="true" look="danger" style="width:200px; margin-top:10px;" />
 				<b:commandButton value="Atualizar" action="#{pessoasBean.irParaAtualizar()}" ajax="true" look="info" style="width:200px; margin-top:10px; margin-left:30px;" />
 				
 			</p:panel>

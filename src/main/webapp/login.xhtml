@@ -20,14 +20,14 @@
 				<p:panelGrid columns="2" cellpadding="5">
 				
 					<p:outputLabel for="nome" value="Nome"/>
-					<p:inputText id="nome"  required="true"/>
+					<p:inputText id="nome" value="#{loginBean.nome}" required="true"/>
 					
 					<p:outputLabel for="senha" value="Senha"/>
-					<p:password id="senha"  required="true"/>
+					<p:password id="senha" value="#{loginBean.senha}" required="true"/>
 					
 				</p:panelGrid>
 				
-				<b:commandButton value="Login"  ajax="true" look="success" style="width:100px; margin-top:10px;"  />
+				<b:commandButton value="Login" action="#{loginBean.irParaPessoas()}" ajax="true" look="success" style="width:100px; margin-top:10px;"  />
 				<b:commandButton value="Ver Todas as Pessoas" action="#{loginBean.irParaPessoas()}" ajax="true" look="primary" style="width:200px; margin-top:10px; margin-left: 30px;" />
 				
 			</p:panel>

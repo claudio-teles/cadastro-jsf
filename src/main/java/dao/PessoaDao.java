@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import org.hibernate.Session;
@@ -40,6 +41,50 @@ public class PessoaDao implements Serializable {
 		return pessoa;
 	}
 	
+	public Boolean login(String nome, String senha) {
+		Pessoa pessoa = new Pessoa();
+		
+		Session sessionLogin = obterSessionFactory().openSession();
+		sessionLogin.beginTransaction();
+		
+		CriteriaBuilder cb = sessionLogin.getCriteriaBuilder();
+		CriteriaQuery<Pessoa> cq = cb.createQuery(Pessoa.class);
+		Root<Pessoa> _pessoa = cq.from(Pessoa.class);
+		Predicate predicate = cb.equal(_pessoa.get("nome_"), nome);
+		cq.select(_pessoa).where(predicate);
+		
+		Query<Pessoa> query = sessionLogin.createQuery(cq);
+		pessoa = query.getSingleResult();
+		
+		if (pessoa.getLogin() == false) {
+			pessoa.setLogin(true);
+			sessionLogin.saveOrUpdate(pessoa);
+		}
+		
+		sessionLogin.getTransaction().commit();
+		sessionLogin.close();
+		return false;
+	}
+	
+	public Boolean logout(Long id) {
+		Pessoa pessoa = new Pessoa();
+		
+		Session sessionPessoa = obterSessionFactory().openSession();
+		sessionPessoa.beginTransaction();
+		
+		pessoa = (Pessoa) sessionPessoa.get(Pessoa.class, id);
+		
+		if (pessoa.getLogin() == true) {
+			pessoa.setLogin(false);
+			sessionPessoa.saveOrUpdate(pessoa);
+			return true;
+		}
+		
+		sessionPessoa.getTransaction().commit();
+		sessionPessoa.close();
+		return false;
+	}
+	
 	public Pessoa obterUmaPessoa(Long id) {
 		Pessoa pessoa = new Pessoa();
 		
@@ -48,10 +93,14 @@ public class PessoaDao implements Serializable {
 		
 		pessoa = (Pessoa) sessionPessoa.get(Pessoa.class, id);
 		
+		if (pessoa.getLogin() == true) {
+			return pessoa;
+		}
+		
 		sessionPessoa.getTransaction().commit();
 		sessionPessoa.close();
 		
-		return pessoa;
+		return null;
 		
 	}
 	
@@ -82,7 +131,7 @@ public class PessoaDao implements Serializable {
 		
 		sessionAtualizar.getTransaction().commit();
 		sessionAtualizar.close();
-		return true;
+		return false;
 	}
 	
 	public Pessoa deletarPessoaPeloId(Long id) {
@@ -91,8 +140,9 @@ public class PessoaDao implements Serializable {
 		sessionDeletar.beginTransaction();
 		
 		pessoa = sessionDeletar.get(Pessoa.class, id);
-		sessionDeletar.delete(pessoa);
-		
+		if (pessoa.getId() != 50 && pessoa.getLogin() == true) {
+			sessionDeletar.delete(pessoa);
+		}
 		sessionDeletar.getTransaction().commit();
 		sessionDeletar.close();
 		return pessoa;

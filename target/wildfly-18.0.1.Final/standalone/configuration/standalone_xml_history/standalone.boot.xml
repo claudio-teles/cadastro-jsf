@@ -529,7 +529,7 @@
     </socket-binding-group>
     <deployments>
         <deployment name="cadastro-jsf-0.0.1.war" runtime-name="cadastro-jsf-0.0.1.war">
-            <content sha1="9faa22113391f83b82bdb13041df29f4748f88c8"/>
+            <content sha1="e6cd232e4067e371e6f5764f85eb24416c008a07"/>
         </deployment>
     </deployments>
 </server>

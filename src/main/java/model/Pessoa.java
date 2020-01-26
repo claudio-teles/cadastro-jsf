@@ -37,6 +37,8 @@ public class Pessoa implements Serializable {
 	@Column(nullable = false, length = 20)
 	private List<String> telefone;
 	
+	private Boolean login;
+	
 	
 	public Pessoa() {
 		super();
@@ -90,10 +92,12 @@ public class Pessoa implements Serializable {
 		this.telefone = telefone;
 	}
 
-	@Override
-	public String toString() {
-		return "Pessoa [id=" + id + ", nome_=" + nome_ + ", email_=" + email_ + ", senha_=" + senha_ + ", telefone="
-				+ telefone + "]";
+	public Boolean getLogin() {
+		return login;
+	}
+
+	public void setLogin(Boolean login) {
+		this.login = login;
 	}
 
 }

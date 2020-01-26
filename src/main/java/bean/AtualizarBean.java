@@ -23,10 +23,15 @@ public class AtualizarBean {
 	
 	private String resulstado = "";
 	
+	public Long definirIdInicial() {
+		this.setId(50L);
+		return this.getId();
+	}
+	
 	public Pessoa pegarUmaPessoaPorId(Long id) {
 		Pessoa pessoa = new Pessoa();
 		PessoaDao pessoaDao = new PessoaDao();
-		pessoa = pessoaDao.obterUmaPessoa(id);
+		pessoa = pessoaDao.obterUmaPessoa(this.getId());
 		
 		this.setNome(pessoa.getNome_());
 		this.setEmail(pessoa.getEmail_());
@@ -67,7 +72,8 @@ public class AtualizarBean {
 		pessoa.setSenha_(senha);
 		pessoa.setTelefone(telefone);
 		
-		System.out.println("Nome: "+nome+", E-mail: "+email+", Senha: "+senha+", Numero: "+_numero+", DDD: "+ddd+", Fixo: "+fixo+", Celular: "+celular+".");
+		System.out.println("Nome: "+nome+", E-mail: "+email+", Senha: "+senha+", Numero: "+_numero+", DDD: "+ddd+", "
+				+ "Fixo: "+fixo+", Celular: "+celular+", Logado: "+pessoa.getLogin()+"");
 		
 		PessoaDao pessoaDao = new PessoaDao();
 		pessoaDao.atualizarPeloId(this.getId(), pessoa);

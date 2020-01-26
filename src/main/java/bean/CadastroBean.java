@@ -44,8 +44,10 @@ public class CadastroBean {
 		pessoa.setEmail_(email);
 		pessoa.setSenha_(senha);
 		pessoa.setTelefone(telefone);
+		pessoa.setLogin(false);
 		
-		System.out.println("Nome: "+nome+", E-mail: "+email+", Senha: "+senha+", Numero: "+_numero+", DDD: "+ddd+", Fixo: "+fixo+", Celular: "+celular+".");
+		System.out.println("Nome: "+nome+", E-mail: "+email+", Senha: "+senha+", Numero: "+_numero+", DDD: "+ddd+", "
+				+ "Fixo: "+fixo+", Celular: "+celular+", Logado: "+pessoa.getLogin()+"");
 		
 		PessoaDao pessoaDao = new PessoaDao();
 		pessoaDao.cadastrar(pessoa);

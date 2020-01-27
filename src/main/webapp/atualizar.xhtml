@@ -24,10 +24,10 @@
 				<p:panelGrid id="grid" columns="2" cellpadding="5">
 				
 					<p:outputLabel for="id" value="ID"/>
-					<p:inputText id="id" value="#{atualizarBean.id}" required="true" onchange="#{atualizarBean.definirIdInicial()}"/>
+					<p:inputText id="id" value="#{atualizarBean.id}" required="true" />
 					
 					<p:outputLabel for="nome" value="Nome"/>
-					<p:inputText id="nome" value="#{atualizarBean.nome}" required="true" onclick="#{atualizarBean.pegarUmaPessoaPorId(atualizarBean.id}"/>
+					<p:inputText id="nome" value="#{atualizarBean.nome}" required="true" />
 					
 					<p:outputLabel for="email" value="E-mail"/>
 					<p:inputText id="email" value="#{atualizarBean.email}" required="true"/>

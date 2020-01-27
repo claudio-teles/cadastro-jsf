@@ -23,31 +23,6 @@ public class AtualizarBean {
 	
 	private String resulstado = "";
 	
-	public Long definirIdInicial() {
-		this.setId(50L);
-		return this.getId();
-	}
-	
-	public Pessoa pegarUmaPessoaPorId(Long id) {
-		Pessoa pessoa = new Pessoa();
-		PessoaDao pessoaDao = new PessoaDao();
-		pessoa = pessoaDao.obterUmaPessoa(this.getId());
-		
-		this.setNome(pessoa.getNome_());
-		this.setEmail(pessoa.getEmail_());
-		this.setSenha(pessoa.getSenha_());
-		this.setDdd(pessoa.getTelefone().get(0));
-		this.setNumero(pessoa.getTelefone().get(1));
-		
-		if (pessoa.getTelefone().get(2).equals("Fixo")) {
-			this.setFixo(true);
-		} else if (pessoa.getTelefone().get(2).equals("Celular")) {
-			this.setCelular(true);
-		}
-		
-		return pessoa;
-	}
-	
 	public Pessoa atualizarPessoa() {
 		
 		ddd = numero.substring(1, 3);

@@ -39,13 +39,31 @@
 
 <br />
 
+<h1>TomCat Managed App</h1>
+
+![tomcat 1](./imagens/tomcat_managed_app.png)
+
+<br />
+
+<h1>TomCat Procurar Executavel</h1>
+
+![tomcat 2](./imagens/escolher_deploy.png)
+
+<br />
+
+<h1>TomCat Fazer o Deploy</h1>
+
+![tomcat 3](./imagens/clicar_executavel.png)
+
+<br />
+
 ![cadastro](./imagens/cadastro.png)
 
 <h1>Lista de Pessoas cadastradas</h1>
 
 <br />
 
-![pessoas](./imagens/lista_pessoas.png)
+![pessoas](./imagens/_atualizar.png)
 
 <br />
 
@@ -62,4 +80,16 @@
 <br />
 
 ![exec](./imagens/executavel_war.png)
+
+<h1>Atualizar Cadastro</h1>
+
+<br />
+
+![atualizar cadastro](./imagens/tela_atualizar.png)
+
+<h1>SQL da Tela de Atualizar Cadastro</h1>
+
+<br />
+
+![atualizar sql](./imagens/sql_update_cadastro.png)
 

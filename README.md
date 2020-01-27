@@ -5,6 +5,13 @@
 
 <h1>No diretório raiz do projeto execute o mesmo pelo prompt de comando ou terminal usando o Maven.</h1>
 
+
+<h1>Experimente executar o projeto rodando online, no link abaixo:</h1>
+
+<br />
+
+<a href="https://cadastro-jsf-online.herokuapp.com/" >cadastro-jsf-online</a>
+
 ![Diretorio Raiz do Projeto](./imagens/diretorio_raiz_projeto.png)
 
 <br />
@@ -35,10 +42,6 @@
 
 <br />
 
-<h1>Tela de Cadastro</h1>
-
-<br />
-
 <h1>TomCat Managed App</h1>
 
 ![tomcat 1](./imagens/tomcat_managed_app.png)
@@ -57,6 +60,8 @@
 
 <br />
 
+<h1>Tela de Cadastro</h1>
+
 ![cadastro](./imagens/cadastro.png)
 
 <h1>Lista de Pessoas cadastradas</h1>
@@ -67,7 +72,7 @@
 
 <br />
 
-<h1>Diretório onde onde executavel: cadastro-jsf-001.war é salvo.</h1>
+<h1>Diretório onde onde o executavel: cadastro-jsf-001.war é salvo.</h1>
 
 <br />
 
